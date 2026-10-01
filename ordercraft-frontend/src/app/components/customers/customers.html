@@ -1,0 +1,74 @@
+<div class="container">
+
+  <h1>OrderCraft Customers</h1>
+
+  <!-- Add Customer Form -->
+  <div class="form-card">
+
+    <h2>Add Customer</h2>
+
+    <input
+      type="text"
+      placeholder="Company Name"
+      [(ngModel)]="newCustomer.companyName"
+    />
+
+    <input
+      type="text"
+      placeholder="Customer Name"
+      [(ngModel)]="newCustomer.customerName"
+    />
+
+    <input
+      type="email"
+      placeholder="Email"
+      [(ngModel)]="newCustomer.email"
+    />
+
+    <input
+      type="text"
+      placeholder="Phone"
+      [(ngModel)]="newCustomer.phone"
+    />
+
+    <button (click)="addCustomer()">
+      Add Customer
+    </button>
+
+  </div>
+
+
+  <!-- Customer List -->
+  <h2>Customer List</h2>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Company</th>
+        <th>Customer Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      @for (customer of customers; track customer.id) {
+
+        <tr>
+          <td>{{ customer.id }}</td>
+          <td>{{ customer.companyName }}</td>
+          <td>{{ customer.customerName }}</td>
+          <td>{{ customer.email }}</td>
+          <td>{{ customer.phone }}</td>
+        </tr>
+
+      }
+
+    </tbody>
+
+  </table>
+
+</div>

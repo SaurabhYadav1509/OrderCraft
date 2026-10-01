@@ -1,0 +1,59 @@
+<div class="dashboard-container">
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="navbar-brand">
+      <span class="brand-title">OrderCraft</span>
+      <span class="badge-role">Admin</span>
+    </div>
+
+    <nav class="nav-links">
+      <a routerLink="/admin" class="nav-link active">Dashboard</a>
+      <a routerLink="/customers" class="nav-link">Customers</a>
+      <a href="javascript:void(0)" class="nav-link">Products</a>
+      <a href="javascript:void(0)" class="nav-link">Materials</a>
+      <a href="javascript:void(0)" class="nav-link">Suppliers</a>
+      <a href="javascript:void(0)" class="nav-link">Inventory</a>
+      <button class="btn-logout" (click)="logout()">Logout</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="welcome-banner">
+      <h1>Admin Dashboard</h1>
+      <p>Welcome back, <strong>{{ currentUser?.fullName || 'Admin' }}</strong> ({{ currentUser?.email }})</p>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Customers Management</h3>
+        <p>Manage customer orders, details, and client accounts.</p>
+        <a routerLink="/customers" class="card-action">View Customers &rarr;</a>
+      </div>
+
+      <div class="card">
+        <h3>Products</h3>
+        <p>Manage manufactured products catalog and specifications.</p>
+        <span class="card-status">Active</span>
+      </div>
+
+      <div class="card">
+        <h3>Materials</h3>
+        <p>Track raw materials, specifications, and costs.</p>
+        <span class="card-status">Active</span>
+      </div>
+
+      <div class="card">
+        <h3>Suppliers</h3>
+        <p>Manage vendor records, contacts, and delivery sources.</p>
+        <span class="card-status">Active</span>
+      </div>
+
+      <div class="card">
+        <h3>Inventory</h3>
+        <p>Monitor warehouse stock, reorder levels, and quantities.</p>
+        <span class="card-status">Active</span>
+      </div>
+    </div>
+  </main>
+</div>
